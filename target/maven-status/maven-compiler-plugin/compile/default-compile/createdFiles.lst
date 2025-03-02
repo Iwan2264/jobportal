@@ -1,3 +1,5 @@
+com\onlineportal\controller\RegisterServlet.class
 com\onlineportal\dao\UserDAO.class
 com\onlineportal\controller\LoginServlet.class
+com\onlineportal\util\DatabaseUtil.class
 com\onlineportal\model\User.class

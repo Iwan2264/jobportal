@@ -7,36 +7,27 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.onlineportal.dao.UserDAO;
 import com.onlineportal.model.User;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
-    private UserDAO userDAO;
-
-    public void init() {
-        userDAO = new UserDAO();
-    }
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
-        User user = userDAO.selectUserByEmail(email);
+        UserDAO userDAO = new UserDAO();
+        User user = userDAO.loginUser(email, password);
 
-        if (user != null && user.getPassword().equals(password)) {
-            // Redirect based on role
-            if (user.getRole().equals("Job Seeker")) {
-                response.sendRedirect("user/dashboard.jsp");
-            } else if (user.getRole().equals("Employer")) {
-                response.sendRedirect("employer/dashboard.jsp");
-            } else if (user.getRole().equals("Admin")) {
-                response.sendRedirect("admin/dashboard.jsp");
-            }
+        if (user != null) {
+            HttpSession session = request.getSession();
+            session.setAttribute("user", user);
+            response.sendRedirect("dashboard.jsp"); // Redirect to dashboard
         } else {
-            response.sendRedirect("login.jsp?error=1");
+            response.sendRedirect("login.jsp?error=1"); // Redirect back to login with error
         }
     }
 }
