@@ -1,0 +1,37 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --header-bg: #6e48aa;
+    --card-bg: #ffffff;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --input-bg: #f8f8f8;
+}
+
+.dark {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --header-bg: #4527a0;
+    --card-bg: #1e1e1e;
+    --card-shadow: rgba(0, 0, 0, 0.3);
+    --input-bg: #2d2d2d;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background: var(--header-bg);
+}
+
+.job-card, .profile-container, .login-container {
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 10px var(--card-shadow);
+}
+
+input, textarea, select {
+    background-color: var(--input-bg);
+    color: var(--text-color);
+}
