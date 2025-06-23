@@ -1,0 +1,431 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #6e48aa, #9d50bb);
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 15px;
+}
+
+.tagline {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #f8f8f8;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+/* Main Container */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Form Container */
+.form-container {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h1 {
+    color: #6e48aa;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #9d50bb;
+    outline: none;
+}
+
+/* Button */
+.btn {
+    width: 100%;
+    background: linear-gradient(135deg, #6e48aa, #9d50bb);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(110, 72, 170, 0.3);
+}
+
+/* Messages */
+.error, .error-messages {
+    color: #e74c3c;
+    background-color: #fdecea;
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+}
+
+.error-messages p {
+    margin: 0.5em 0;
+}
+
+/* Link */
+.login-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #555;
+}
+
+.login-link a {
+    color: #6e48aa;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Dashboard */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.dashboard-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f9f9f9;
+    border-radius: 6px;
+}
+
+.dashboard-section h3 {
+    color: #6e48aa;
+    margin-bottom: 1rem;
+}
+
+/* Job Listings */
+.job-listings {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* Job Card */
+.job-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.company-logo {
+    margin-bottom: 15px;
+}
+
+.company-logo img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.job-details {
+    flex-grow: 1;
+}
+
+.job-details h3 {
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.job-details p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.job-details .company {
+    color: #6e48aa;
+    font-weight: 600;
+}
+
+.job-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-view, .btn-apply {
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+    flex: 1;
+    transition: all 0.3s ease;
+}
+
+.btn-view {
+    background: #f0f0f0;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.btn-view:hover {
+    background: #e0e0e0;
+}
+
+.btn-apply {
+    background: #6e48aa;
+    color: white;
+    border: 1px solid #6e48aa;
+}
+
+.btn-apply:hover {
+    background: #5d3a99;
+}
+
+.no-jobs {
+    text-align: center;
+    padding: 30px;
+    color: #666;
+    font-size: 1.1rem;
+    grid-column: 1 / -1;
+}
+
+/* Font Awesome (only needed once globally) */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+/* Application Listings Styles */
+.application-listings {
+    margin-top: 30px;
+}
+
+.application-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.application-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.application-header .company-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-right: 15px;
+}
+
+.application-title {
+    flex-grow: 1;
+}
+
+.application-title h3 {
+    margin: 0;
+    color: #333;
+}
+
+.application-title .company {
+    margin: 5px 0 0;
+    color: #6e48aa;
+    font-weight: 600;
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.status.applied {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.status.review {
+    background: #fff8e1;
+    color: #ff8f00;
+}
+
+.status.rejected {
+    background: #ffebee;
+    color: #d32f2f;
+}
+
+.application-details {
+    padding: 10px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    margin: 15px 0;
+}
+
+.application-details p {
+    margin: 8px 0;
+    color: #555;
+}
+
+.application-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-view, .btn-withdraw, .btn-feedback {
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-view {
+    background: #f0f0f0;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.btn-view:hover {
+    background: #e0e0e0;
+}
+
+.btn-withdraw {
+    background: #ffebee;
+    color: #d32f2f;
+    border: 1px solid #ffcdd2;
+}
+
+.btn-withdraw:hover {
+    background: #ffcdd2;
+}
+
+.btn-feedback {
+    background: #e3f2fd;
+    color: #1976d2;
+    border: 1px solid #bbdefb;
+}
+
+.btn-feedback:hover {
+    background: #bbdefb;
+}
+/* Apply button styles */
+.btn-apply, .btn-apply-large {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-apply-large {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+}
+
+.btn-apply:hover, .btn-apply-large:hover {
+    background: #3e8e41;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.btn-apply:active, .btn-apply-large:active {
+    transform: translateY(0);
+}
